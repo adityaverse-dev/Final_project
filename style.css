@@ -1,1068 +1,193 @@
-/* =========================================
-   BUS PASS MANAGEMENT SYSTEM
-   CSS STYLES
-========================================= */
-
-
-/* ---------- BASIC RESET ---------- */
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f4f7fb;
-    color: #172033;
-    line-height: 1.6;
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    padding: 30px;
 }
 
-
-/* ---------- NAVIGATION ---------- */
-
-header {
-    width: 100%;
-    background: #071426;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.navbar {
-    max-width: 1200px;
+.container {
+    max-width: 900px;
     margin: auto;
-    padding: 18px 30px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
-.logo {
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
-
-.nav-links {
-    list-style: none;
-
-    display: flex;
-    gap: 30px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: #dce6f5;
-    font-size: 15px;
-    transition: 0.3s;
-}
-
-.nav-links a:hover {
-    color: #42a5ff;
-}
-
-
-/* ---------- HERO SECTION ---------- */
-
-.hero {
-    min-height: 620px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #071426 0%,
-            #0b2442 60%,
-            #103d67 100%
-        );
-
-    color:white;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 80px 30px;
-
-    overflow: hidden;
-}
-
-.hero-content {
-    max-width: 850px;
+h1 {
     text-align: center;
-
-    animation: heroEntry 1s ease forwards;
+    color: #222;
 }
 
-.welcome {
-    color: #4cb3ff;
-    font-size: 13px;
+.subtitle {
+    text-align: center;
+    color: #777;
+    margin: 8px 0 25px;
+}
+
+/* Form */
+
+.form-box {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 1fr 1fr auto;
+    gap: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+input,
+select {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    outline: none;
+}
+
+input:focus,
+select:focus {
+    border-color: #007bff;
+}
+
+button {
+    border: none;
+    padding: 12px 18px;
+    border-radius: 7px;
+    cursor: pointer;
+    background: #007bff;
+    color: white;
     font-weight: bold;
-    letter-spacing: 3px;
-    margin-bottom: 15px;
 }
 
-.hero h1 {
-    font-size: clamp(45px, 7vw, 80px);
-    line-height: 1.05;
-    margin-bottom: 25px;
+button:hover {
+    opacity: 0.85;
 }
 
-.hero h1 span {
-    color: #43a9ff;
-}
+/* Filters */
 
-.hero-content > p:not(.welcome) {
-    max-width: 650px;
-    margin: auto;
-
-    color: #c5d3e6;
-    font-size: 17px;
-}
-
-
-/* ---------- HERO BUTTONS ---------- */
-
-.hero-buttons {
-    margin-top: 35px;
-
+.filters {
+    margin: 20px 0;
     display: flex;
-    justify-content: center;
-    gap: 15px;
-
+    gap: 10px;
     flex-wrap: wrap;
 }
 
-.btn {
-    display: inline-block;
-
-    padding: 13px 25px;
-
-    border-radius: 8px;
-
-    text-decoration: none;
-    font-weight: bold;
-
-    transition: 0.3s;
+.filters select {
+    flex: 1;
 }
 
-.primary-btn {
-    background: #2799ee;
-    color: white;
+.danger {
+    background: #dc3545;
 }
 
-.primary-btn:hover {
-    background-color: #097bc7;
-    color: #f5f2f2;
-    transform: translateY(-5px);
-}
+/* Shopping items */
 
-.secondary-btn {
-    border: 1px solid #5c7897;
-    color: white;
-}
-
-.secondary-btn:hover {
-    background: white;
-    color: #071426;
-    transform: translateY(-5px);
-}
-
-
-/*  FEATURES  */
-
-.features {
-    max-width: 1100px;
-    margin: -55px auto 80px;
-
-    padding: 0 25px;
-
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
-
-    position: relative;
-    z-index: 2;
-}
-
-.feature-card {
-    background: white;
-
-    padding: 32px 25px;
-
-    border-radius: 14px;
-
-    box-shadow: 0 10px 35px rgba(10, 30, 60, 0.10);
-
-    transition: 0.3s;
-
-    text-align: center;
-}
-
-.feature-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 40px rgba(10, 30, 60, 0.16);
-}
-
-.feature-icon {
-    width: 60px;
-    height: 60px;
-
-    margin: auto auto 15px;
-
-    border-radius: 50%;
-
-    background: #e8f4ff;
-
+#shoppingList {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.item {
+    background: white;
+    padding: 18px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-
-    font-size: 27px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
 }
 
-.feature-card h3 {
-    margin-bottom: 8px;
+.item-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
-.feature-card p {
-    color: #6c7787;
-    font-size: 14px;
+.item-info input {
+    width: 20px;
+    height: 20px;
 }
 
-
-/* ---------- GENERAL SECTIONS ---------- */
-
-.section {
-    max-width: 1100px;
-    margin: auto;
-
-    padding: 90px 25px;
-}
-
-.section-heading {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.section-heading p {
-    color: #168bd8;
-    font-size: 12px;
+.item-name {
+    font-size: 18px;
     font-weight: bold;
-    letter-spacing: 2px;
 }
 
-.section-heading h2 {
-    font-size: 38px;
+.category {
+    font-size: 12px;
+    background: #e8f1ff;
+    color: #007bff;
+    padding: 4px 8px;
+    border-radius: 5px;
+    margin-left: 8px;
+}
+
+.details {
+    color: #666;
     margin-top: 5px;
-}
-
-
-/* ---------- APPLICATION FORM ---------- */
-
-.form-container {
-    max-width: 850px;
-    margin: auto;
-
-    background: white;
-
-    padding: 40px;
-
-    border-radius: 16px;
-
-    box-shadow: 0 10px 40px rgba(10, 30, 60, 0.09);
-}
-
-.form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-.input-group {
-    margin-bottom: 20px;
-}
-
-.input-group label {
-    display: block;
-
-    margin-bottom: 7px;
-
-    font-size: 14px;
-    font-weight: bold;
-
-    color: #25344b;
-}
-
-.input-group input,
-.input-group textarea,
-.input-group select,
-.status-container input {
-    width: 100%;
-
-    padding: 13px 14px;
-
-    border: 1px solid #d8e0e9;
-
-    border-radius: 7px;
-
-    font-family: inherit;
-    font-size: 14px;
-
-    outline: none;
-
-    background: #fbfcfe;
-
-    transition: 0.3s;
-}
-
-.input-group textarea {
-    resize: vertical;
-}
-
-.input-group input:focus,
-.input-group textarea:focus,
-.input-group select:focus,
-.status-container input:focus {
-    border-color: #2799ee;
-
-    box-shadow: 0 0 0 3px rgba(39, 153, 238, 0.12);
-}
-
-
-/* ---------- SUBMIT BUTTON ---------- */
-
-.submit-btn {
-    width: 100%;
-
-    border: none;
-
-    padding: 15px;
-
-    background: #168bd8;
-    color: white;
-
-    border-radius: 8px;
-
-    font-size: 15px;
-    font-weight: bold;
-
-    cursor: pointer;
-
-    transition: 0.3s;
-}
-
-.submit-btn:hover {
-    background: #0d73b5;
-    transform: translateY(-2px);
-}
-
-
-/* ---------- ROUTES ---------- */
-
-.routes-section {
-    max-width: 1200px;
-}
-
-.route-container {
-    display: grid;
-
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 20px;
-}
-
-.route-card {
-    background: #071426;
-
-    color: white;
-
-    padding: 30px;
-
-    border-radius: 14px;
-
-    position: relative;
-
-    overflow: hidden;
-
-    transition: 0.3s;
-}
-
-.route-card:hover {
-    transform: translateY(-5px);
-}
-
-.route-card span {
-    display: inline-flex;
-
-    width: 45px;
-    height: 45px;
-
-    border-radius: 50%;
-
-    background: #2799ee;
-
-    align-items: center;
-    justify-content: center;
-
-    font-weight: bold;
-
-    margin-bottom: 18px;
-}
-
-.route-card h3 {
-    margin-bottom: 8px;
-}
-
-.route-card p {
-    color: #aebed2;
     font-size: 14px;
 }
 
-
-/* ---------- STATUS SECTION ---------- */
-
-.status-section {
-    max-width: 850px;
+.purchased .item-name {
+    text-decoration: line-through;
+    color: #999;
 }
 
-.status-container {
-    background: white;
-
-    padding: 35px;
-
-    border-radius: 16px;
-
-    box-shadow: 0 10px 40px rgba(10, 30, 60, 0.09);
-
-    text-align: center;
+.purchased {
+    opacity: 0.7;
 }
 
-.status-container input {
-    margin-bottom: 15px;
+.delete-btn {
+    background: #dc3545;
+    padding: 8px 12px;
 }
 
-.status-btn {
-    width: 100%;
+/* Bill */
 
-    padding: 14px;
-
-    border: none;
-
-    background: #071426;
-    color: white;
-
-    border-radius: 7px;
-
-    cursor: pointer;
-
-    font-weight: bold;
-
-    transition: 0.3s;
-}
-
-.status-btn:hover {
-    background: #168bd8;
-}
-
-
-/* ---------- STATUS RESULT ---------- */
-
-#statusResult {
+.bill {
     margin-top: 25px;
-}
-
-.status-card {
-    background: #f5f9fd;
-
-    border-left: 5px solid #2799ee;
-
-    padding: 20px;
-
-    text-align: left;
-
-    border-radius: 8px;
-
-    animation: resultEntry 0.5s ease;
-}
-
-.status-card h3 {
-    margin-bottom: 10px;
-}
-
-.status-card p {
-    margin: 5px 0;
-    color: #526174;
-}
-
-.status-approved {
-    color: #168c55;
-    font-weight: bold;
-}
-
-.status-pending {
-    color: #d28a00;
-    font-weight: bold;
-}
-
-.status-rejected {
-    color: #d63c3c;
-    font-weight: bold;
-}
-
-.error-message {
-    color: #d63c3c;
-    font-weight: bold;
-}
-
-
-/* ---------- FOOTER ---------- */
-
-footer {
-    background: #071426;
-
+    background: #222;
     color: white;
-
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-around;
     text-align: center;
-
-    padding: 45px 20px;
 }
 
-footer h3 {
-    font-size: 22px;
-    margin-bottom: 8px;
+.bill div {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
 }
 
-footer p {
-    color: #aebed2;
+.bill strong {
+    font-size: 20px;
 }
 
-footer .copyright {
-    margin-top: 20px;
-    font-size: 12px;
-}
+/* Mobile */
 
+@media (max-width: 700px) {
 
-/* ---------- ANIMATIONS ---------- */
-
-@keyframes heroEntry {
-
-    from {
-        opacity: 0;
-        transform: translateY(30px);
+    body {
+        padding: 15px;
     }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-}
-
-@keyframes resultEntry {
-
-    from {
-        opacity: 0;
-        transform: scale(0.95);
-    }
-
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-
-}
-
-
-/* ---------- RESPONSIVE DESIGN ---------- */
-
-@media (max-width: 800px) {
-
-    .navbar {
-        padding: 16px 20px;
-    }
-
-    .nav-links {
-        gap: 14px;
-    }
-
-    .nav-links a {
-        font-size: 13px;
-    }
-
-    .features {
-        grid-template-columns: 1fr;
-        margin-top: 30px;
-    }
-
-    .form-row {
-        grid-template-columns: 1fr;
-        gap: 0;
-    }
-
-    .route-container {
+    .form-box {
         grid-template-columns: 1fr;
     }
 
-    .hero {
-        min-height: 550px;
-    }
-
-}
-
-
-@media (max-width: 500px) {
-
-    .navbar {
+    .item {
         flex-direction: column;
-        gap: 12px;
-    }
-
-    .nav-links {
+        align-items: flex-start;
         gap: 15px;
     }
 
-    .hero {
-        padding: 60px 20px;
+    .bill {
+        flex-direction: column;
+        gap: 20px;
     }
-
-    .hero h1 {
-        font-size: 43px;
-    }
-
-    .hero-content > p:not(.welcome) {
-        font-size: 15px;
-    }
-
-    .section {
-        padding: 65px 18px;
-    }
-
-    .section-heading h2 {
-        font-size: 30px;
-    }
-
-    .form-container,
-    .status-container {
-        padding: 25px 20px;
-    }
-
-}
-
-/* =========================================
-   ADMIN DASHBOARD
-========================================= */
-
-.admin-section {
-    max-width: 1200px;
-}
-
-
-/* ---------- STATISTICS ---------- */
-
-.admin-stats {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(4, 1fr);
-
-    gap: 18px;
-
-    margin-bottom: 35px;
-}
-
-.stat-card {
-
-    background: white;
-
-    padding: 25px;
-
-    border-radius: 14px;
-
-    text-align: center;
-
-    box-shadow:
-        0 8px 30px rgba(10, 30, 60, 0.08);
-
-    transition: 0.3s;
-}
-
-.stat-card:hover {
-
-    transform: translateY(-5px);
-
-}
-
-.stat-card span {
-
-    font-size: 25px;
-
-}
-
-.stat-card h3 {
-
-    font-size: 32px;
-
-    margin: 8px 0;
-
-    color: #168bd8;
-
-}
-
-.stat-card p {
-
-    color: #6c7787;
-
-    font-size: 13px;
-
-}
-
-
-/* ---------- ADMIN TABLE ---------- */
-
-.admin-table-container {
-
-    background: white;
-
-    border-radius: 14px;
-
-    padding: 20px;
-
-    box-shadow:
-        0 8px 30px rgba(10, 30, 60, 0.08);
-
-    overflow-x: auto;
-
-}
-
-.admin-table {
-
-    width: 100%;
-
-    border-collapse: collapse;
-
-    min-width: 800px;
-
-}
-
-.admin-table th {
-
-    background: #071426;
-
-    color: white;
-
-    padding: 15px;
-
-    text-align: left;
-
-    font-size: 13px;
-
-}
-
-.admin-table td {
-
-    padding: 14px 15px;
-
-    border-bottom: 1px solid #e5eaf0;
-
-    font-size: 13px;
-
-}
-
-.admin-table tr:hover {
-
-    background: #f7faff;
-
-}
-
-
-/* ---------- ADMIN BUTTONS ---------- */
-
-.approve-btn,
-.reject-btn,
-.view-btn {
-
-    border: none;
-
-    padding: 7px 11px;
-
-    border-radius: 5px;
-
-    cursor: pointer;
-
-    font-size: 12px;
-
-    font-weight: bold;
-
-    margin: 2px;
-
-    transition: 0.2s;
-
-}
-
-.approve-btn {
-
-    background: #dff7e9;
-
-    color: #168c55;
-
-}
-
-.approve-btn:hover {
-
-    background: #168c55;
-
-    color: white;
-
-}
-
-.reject-btn {
-
-    background: #ffe3e3;
-
-    color: #d63c3c;
-
-}
-
-.reject-btn:hover {
-
-    background: #d63c3c;
-
-    color: white;
-
-}
-
-.view-btn {
-
-    background: #e5f3ff;
-
-    color: #168bd8;
-
-}
-
-.view-btn:hover {
-
-    background: #168bd8;
-
-    color: white;
-
-}
-
-
-/* ---------- DIGITAL BUS PASS ---------- */
-
-.digital-pass {
-
-    max-width: 450px;
-
-    margin: 25px auto;
-
-    border-radius: 18px;
-
-    overflow: hidden;
-
-    background: white;
-
-    box-shadow:
-        0 15px 45px rgba(10, 30, 60, 0.15);
-
-    animation: resultEntry 0.5s ease;
-
-}
-
-.pass-header {
-
-    background: #071426;
-
-    color: white;
-
-    padding: 20px;
-
-    text-align: center;
-
-    font-weight: bold;
-
-    letter-spacing: 1px;
-
-}
-
-.pass-body {
-
-    padding: 30px;
-
-    text-align: center;
-
-}
-
-.pass-icon {
-
-    width: 70px;
-
-    height: 70px;
-
-    margin: auto;
-
-    border-radius: 50%;
-
-    background: #e8f4ff;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    font-size: 30px;
-
-}
-
-.pass-body h2 {
-
-    margin-top: 15px;
-
-}
-
-.pass-body > p {
-
-    color: #697688;
-
-    font-size: 13px;
-
-}
-
-.pass-info {
-
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 15px;
-
-    margin: 25px 0;
-
-    text-align: left;
-
-}
-
-.pass-info div {
-
-    background: #f5f8fb;
-
-    padding: 12px;
-
-    border-radius: 7px;
-
-}
-
-.pass-info small {
-
-    display: block;
-
-    color: #718096;
-
-    font-size: 9px;
-
-    margin-bottom: 4px;
-
-}
-
-.pass-info strong {
-
-    font-size: 12px;
-
-}
-
-.qr-code {
-
-    border: 2px dashed #168bd8;
-
-    padding: 15px;
-
-    font-family: monospace;
-
-    font-weight: bold;
-
-    letter-spacing: 2px;
-
-    margin-top: 10px;
-
-}
-
-.pass-note {
-
-    margin-top: 20px;
-
-}
-
-
-/* ---------- VIEW PASS BUTTON ---------- */
-
-.pass-view-btn {
-
-    width: 100%;
-
-    margin-top: 20px;
-
-    padding: 13px;
-
-    border: none;
-
-    border-radius: 7px;
-
-    background: #168bd8;
-
-    color: white;
-
-    font-weight: bold;
-
-    cursor: pointer;
-
-    transition: 0.3s;
-
-}
-
-.pass-view-btn:hover {
-
-    background: #0d73b5;
-
-    transform: translateY(-2px);
-
-}
-
-
-/* ---------- ADMIN RESPONSIVE ---------- */
-
-@media (max-width: 850px) {
-
-    .admin-stats {
-
-        grid-template-columns:
-            repeat(2, 1fr);
-
-    }
-
-}
-
-@media (max-width: 500px) {
-
-    .admin-stats {
-
-        grid-template-columns: 1fr;
-
-    }
-
-    .pass-info {
-
-        grid-template-columns: 1fr;
-
-    }
-
 }

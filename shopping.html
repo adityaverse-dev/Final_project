@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping List App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>🛒 Shopping List</h1>
+        <p class="subtitle">Manage your shopping easily</p>
+
+        <!-- Add Item Form -->
+        <div class="form-box">
+
+            <input type="text" id="itemName" placeholder="Item name">
+
+            <select id="category">
+                <option value="Groceries">Groceries</option>
+                <option value="Fruits">Fruits</option>
+                <option value="Vegetables">Vegetables</option>
+                <option value="Dairy">Dairy</option>
+                <option value="Snacks">Snacks</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <input type="number" id="quantity" placeholder="Quantity" min="1">
+
+            <input type="number" id="price" placeholder="Price (₹)" min="0">
+
+            <button onclick="addItem()">Add Item</button>
+
+        </div>
+
+        <!-- Filters -->
+        <div class="filters">
+
+            <select id="filterCategory" onchange="displayItems()">
+                <option value="All">All Categories</option>
+                <option value="Groceries">Groceries</option>
+                <option value="Fruits">Fruits</option>
+                <option value="Vegetables">Vegetables</option>
+                <option value="Dairy">Dairy</option>
+                <option value="Snacks">Snacks</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <button onclick="clearPurchased()">Clear Purchased</button>
+            <button onclick="clearAll()" class="danger">Clear All</button>
+
+        </div>
+
+        <!-- Shopping List -->
+        <div id="shoppingList"></div>
+
+        <!-- Bill -->
+        <div class="bill">
+
+            <div>
+                <span>Total Items</span>
+                <strong id="totalItems">0</strong>
+            </div>
+
+            <div>
+                <span>Purchased</span>
+                <strong id="purchasedItems">0</strong>
+            </div>
+
+            <div>
+                <span>Total Bill</span>
+                <strong id="totalBill">₹0.00</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
