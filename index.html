@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bus Pass Management System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Nav Bar -->
+    <header>
+        <nav class="navbar">
+
+            <div class="logo">
+                🚌 BusPass
+            </div>
+
+            <ul class="nav-links">
+
+    <li><a href="#home">Home</a></li>
+
+    <li><a href="#apply">Apply</a></li>
+
+    <li><a href="#routes">Routes</a></li>
+
+    <li><a href="#status">Status</a></li>
+
+    <li><a href="#admin">Admin</a></li>
+
+</ul>
+        </nav>
+    </header>
+
+
+    <!-- Home -->
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <p class="welcome">STUDENT TRANSPORT PORTAL</p>
+
+            <h1>
+                Your Journey,<br>
+                <span>Our Responsibility.</span>
+            </h1>
+
+            <p>
+                Apply for your student bus pass, select your route,
+                and track your application status easily.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#apply" class="btn primary-btn">
+                    Apply for Pass
+                </a>
+
+                <a href="#status" class="btn secondary-btn">
+                    Check Status
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Features -->
+    <section class="features">
+
+        <div class="feature-card">
+            <div class="feature-icon">📝</div>
+            <h3>Easy Application</h3>
+            <p>
+                Apply for your bus pass by entering
+                your basic details.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">🚌</div>
+            <h3>Choose Your Route</h3>
+            <p>
+                Select your preferred route and
+                pass duration.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">🔎</div>
+            <h3>Track Status</h3>
+            <p>
+                Check your application status
+                using your application ID.
+            </p>
+        </div>
+
+    </section>
+
+
+    <!-- Application Section -->
+    <section id="apply" class="section">
+
+        <div class="section-heading">
+            <p>GET YOUR PASS</p>
+            <h2>Apply for Bus Pass</h2>
+        </div>
+
+        <div class="form-container">
+
+            <form id="passForm">
+
+                <div class="form-row">
+
+                    <div class="input-group">
+                        <label for="studentName">
+                            Student Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="studentName"
+                            placeholder="Enter your full name"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="input-group">
+                        <label for="rollNumber">
+                            Roll Number
+                        </label>
+
+                        <input
+                            type="text"
+                            id="rollNumber"
+                            placeholder="Enter roll number"
+                            required
+                        >
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="input-group">
+                        <label for="college">
+                            College / University
+                        </label>
+
+                        <input
+                            type="text"
+                            id="college"
+                            placeholder="Enter institution name"
+                            required
+                        >
+                    </div>
+
+
+                    <div class="input-group">
+                        <label for="phone">
+                            Phone Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            placeholder="Enter phone number"
+                            required
+                        >
+                    </div>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter email address"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="address">
+                        Address
+                    </label>
+
+                    <textarea
+                        id="address"
+                        rows="3"
+                        placeholder="Enter your address"
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="input-group">
+
+                        <label for="route">
+                            Select Route
+                        </label>
+
+                        <select id="route" required>
+
+                            <option value="">
+                                -- Select Route --
+                            </option>
+
+                            <option value="Route 101">
+                                Route 101 — City Center → University
+                            </option>
+
+                            <option value="Route 102">
+                                Route 102 — Railway Station → University
+                            </option>
+
+                            <option value="Route 103">
+                                Route 103 — Airport → University
+                            </option>
+
+                            <option value="Route 104">
+                                Route 104 — Main Market → University
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label for="duration">
+                            Pass Duration
+                        </label>
+
+                        <select id="duration" required>
+
+                            <option value="">
+                                -- Select Duration --
+                            </option>
+
+                            <option value="1 Month">
+                                1 Month
+                            </option>
+
+                            <option value="3 Months">
+                                3 Months
+                            </option>
+
+                            <option value="6 Months">
+                                6 Months
+                            </option>
+
+                            <option value="1 Year">
+                                1 Year
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <button type="submit" class="submit-btn">
+                    Submit Application
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- Routes Section -->
+    <section id="routes" class="section routes-section">
+
+        <div class="section-heading">
+            <p>TRANSPORT NETWORK</p>
+            <h2>Available Routes</h2>
+        </div>
+
+
+        <div class="route-container">
+
+            <div class="route-card">
+                <span>101</span>
+                <h3>City Center → University</h3>
+                <p>City Center • Central Park • University</p>
+            </div>
+
+
+            <div class="route-card">
+                <span>102</span>
+                <h3>Railway Station → University</h3>
+                <p>Station • Bus Stand • University</p>
+            </div>
+
+
+            <div class="route-card">
+                <span>103</span>
+                <h3>Airport → University</h3>
+                <p>Airport • Main Road • University</p>
+            </div>
+
+
+            <div class="route-card">
+                <span>104</span>
+                <h3>Main Market → University</h3>
+                <p>Market • City Mall • University</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Status Section -->
+    <section id="status" class="section status-section">
+
+        <div class="section-heading">
+            <p>APPLICATION TRACKER</p>
+            <h2>Check Pass Status</h2>
+        </div>
+
+
+        <div class="status-container">
+
+            <input
+                type="text"
+                id="applicationId"
+                placeholder="Enter Application ID"
+            >
+
+            <button
+                class="status-btn"
+                onclick="checkStatus()"
+            >
+                Check Status
+            </button>
+
+            <div id="statusResult"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ADMIN DASHBOARD -->
+
+<section id="admin" class="section admin-section">
+
+    <div class="section-heading">
+        <p>ADMINISTRATION</p>
+        <h2>Admin Dashboard</h2>
+    </div>
+
+
+    <!-- Dashboard Statistics -->
+
+    <div class="admin-stats">
+
+        <div class="stat-card">
+            <span>📋</span>
+            <h3 id="totalApplications">0</h3>
+            <p>Total Applications</p>
+        </div>
+
+
+        <div class="stat-card">
+            <span>⏳</span>
+            <h3 id="pendingApplications">0</h3>
+            <p>Pending</p>
+        </div>
+
+
+        <div class="stat-card">
+            <span>✓</span>
+            <h3 id="approvedApplications">0</h3>
+            <p>Approved</p>
+        </div>
+
+
+        <div class="stat-card">
+            <span>✕</span>
+            <h3 id="rejectedApplications">0</h3>
+            <p>Rejected</p>
+        </div>
+
+    </div>
+
+
+    <!-- Applications Table -->
+
+    <div class="admin-table-container">
+
+        <table class="admin-table">
+
+            <thead>
+
+                <tr>
+                    <th>Application ID</th>
+                    <th>Student</th>
+                    <th>Route</th>
+                    <th>Duration</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+
+            </thead>
+
+
+            <tbody id="adminTableBody">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <h3>🚌 BusPass</h3>
+
+        <p>
+            Student Bus Pass Management System
+        </p>
+
+        <p class="copyright">
+            © 2026 Divyanshu Kumar. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
